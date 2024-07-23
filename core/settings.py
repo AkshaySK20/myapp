@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'users',
+    'graphene_django',
+    'graphql_jwt.refresh_token.apps.RefreshTokenConfig',
+    'graphql_auth',
 ]
 
 MIDDLEWARE = [
@@ -121,3 +125,19 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'users.ExtendUser'
+
+GRAPHENE = {
+    'SCHEMA': 'users.schema.schema',
+    'MIDDLEWARE': [
+        'graphql_jwt.middleware.JSONWebTokenMiddleware',
+    ],
+}
+
+AUTHENTICATION_BACKENDS = [
+    ##'graphql_jwt.backends.JSONWebTokenBackend',
+    'graphql_auth.backend.GraphQLAuthBackend'  
+    'django.contrib.auth.backends.ModelBackend',
+]
+
