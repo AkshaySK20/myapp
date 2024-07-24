@@ -137,15 +137,14 @@ GRAPHENE = {
 }
 
 AUTHENTICATION_BACKENDS = [
-    #'graphql_jwt.backends.JSONWebTokenBackend',
     'graphql_auth.backends.GraphQLAuthBackend',
     'django.contrib.auth.backends.ModelBackend',
 ]
 
 GRAPHQL_JWT = {
     "JWT_ALLOW_ANY_CLASSES": [
-        "graphql_auth.mutation.Register",
-        "graphql_auth.mutation.VerifyAccount",
+        'graphql_auth.mutations.Register',
+        "graphql_auth.mutations.VerifyAccount",
         "graphql_auth.mutations.ObtainJSONWebToken",
     ],
     "JWT_VERIFY_EXPIRATION": True,
