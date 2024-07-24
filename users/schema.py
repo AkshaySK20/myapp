@@ -8,6 +8,7 @@ class AuthMutation(graphene.ObjectType):
     verify_account = mutations.VerifyAccount.Field()
     obtain_token = mutations.ObtainJSONWebToken.Field()
 
+
 class Query(UserQuery, MeQuery, graphene.ObjectType):
     pass
 

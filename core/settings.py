@@ -150,6 +150,8 @@ GRAPHQL_JWT = {
     ],
     "JWT_VERIFY_EXPIRATION": True,
     "JWT_LONG_RUNNING_REFRESH_TOKEN": True,
+    'JWT_AUTH_HEADER_NAME': 'HTTP_AUTHORIZATION',
+    'JWT_AUTH_HEADER_PREFIX': 'JWT',
 }
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
