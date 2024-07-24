@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-from graphql_auth.models import UserStatus
 
 
 class ExtendUser(AbstractUser):

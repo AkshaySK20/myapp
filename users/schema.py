@@ -5,8 +5,8 @@ from graphql_auth import mutations
 
 class AuthMutation(graphene.ObjectType):
     register = mutations.Register.Field()
-    #delete_account = mutations.DeleteAccount.Field()
-
+    verify_account = mutations.VerifyAccount.Field()
+    obtain_token = mutations.ObtainJSONWebToken.Field()
 
 class Query(UserQuery, MeQuery, graphene.ObjectType):
     pass

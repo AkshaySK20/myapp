@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'graphql_jwt.refresh_token.apps.RefreshTokenConfig',
     'graphql_auth',
     'django_filters',
-
 ]
 
 MIDDLEWARE = [
@@ -144,11 +143,13 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 GRAPHQL_JWT = {
-    "JWT_ALLOW_ANY_CLASSES":[
-        'graphql_auth.mutations.Register',
+    "JWT_ALLOW_ANY_CLASSES": [
+        "graphql_auth.mutation.Register",
+        "graphql_auth.mutation.VerifyAccount",
+        "graphql_auth.mutations.ObtainJSONWebToken",
     ],
     "JWT_VERIFY_EXPIRATION": True,
     "JWT_LONG_RUNNING_REFRESH_TOKEN": True,
 }
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
