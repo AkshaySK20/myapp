@@ -11,3 +11,4 @@ app = apps.get_app_config('graphql_auth')
 for model_name, model in app.models.items():
     admin.site.register(model)
 # app.models is a dictionary where the keys are the model names and the values are the model classes.
+
